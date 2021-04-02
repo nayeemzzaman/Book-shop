@@ -1,0 +1,11 @@
+.book-card{
+   border: 1px solid black;
+   border-radius: 10px;
+   width: 300px;
+   margin-bottom: 40px;
+   padding: 20px;
+}
+.lower-part{
+    display:flex;
+    justify-content:space-around;
+}
