@@ -9,3 +9,30 @@
     display:flex;
     justify-content:space-around;
 }
+.price{
+    background-color: rgb(247, 145, 61);
+    border-radius:  5px;
+    padding: 10px;
+    width: 100px;
+    color: white;
+}
+.button{
+    height: 45px;
+    font-weight: 600;
+    font-size: 20px;
+    background-color: rgba(0, 0, 150, 0.719) !important;
+    border: none !important;
+}
+.book-name{
+    margin-top: 10px;
+    color: rgb(6, 132, 250);
+}
+.author-name{
+    color: gray
+}
+@media (max-width: 600px){
+    .book-card{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

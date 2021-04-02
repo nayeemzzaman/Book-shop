@@ -2,13 +2,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import { userContext } from '../../App';
 import Table from 'react-bootstrap/Table'
 import loading from '../../images/loading@.gif'
-
+import './Orders.css'
 const Orders = () => {
     const [orders, setOrders] = useState([]);
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     console.log(loggedInUser);
     useEffect(() => {
-        fetch('http://localhost:4000/orders?email=' + loggedInUser.email, {
+        fetch('https://radiant-reef-79950.herokuapp.com/orders?email=' + loggedInUser.email, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -22,7 +22,7 @@ const Orders = () => {
         marginLeft: '90%'
     }
     return (
-        <Table className="container" striped bordered hover size="sm">
+        <Table  className="container order-table" striped bordered hover size="sm">
             <thead>
                 <tr>
                     <th>Book Name</th>
@@ -46,23 +46,7 @@ const Orders = () => {
                     
                     )
                 }
-                {/* <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td colSpan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr> */}
+                
             </tbody>
         </Table>
     );

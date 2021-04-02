@@ -17,14 +17,14 @@ const Checkout = () => {
      const productKey = id;
      console.log(productKey);
     useEffect(()=> {
-        fetch(`http://localhost:4000/bookBy/${id}`)
+        fetch(`https://radiant-reef-79950.herokuapp.com/bookBy/${id}`)
         .then(res => res.json())
         .then(data => setItem(data[0]))
     }, [])
     const handleCheckOut =()=>{
         const orderDetails ={...loggedInUser, productInfo: item, orderTime: new Date()}
 
-        fetch('http://localhost:4000/addOrder', {
+        fetch('https://radiant-reef-79950.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ const Checkout = () => {
     }
     console.log(item);
     return (
-        <div className='container'>
+        <div className='container checkout'>
             <div className='row'>
                 <div className="col-md-6">
                     <p>Description</p>

@@ -1,3 +1,6 @@
+.admin-page{
+    margin-top: 113px;
+}
 .form input{
     height: 30px;
     width: 300px;
@@ -8,14 +11,14 @@
     border-radius: 0px;
 }
 .side-component{
-    height: 600px;
+    height: 700px;
     background-color: rgb(13, 7, 46);
     color: white;
     margin-top:0px;
     padding: 0px;
 }
 .buttons{
-    width: 104.5%;
+    width: 100%;
     margin-right: 0px;
     margin-top: 70px;
 }

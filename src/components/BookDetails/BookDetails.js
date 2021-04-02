@@ -4,7 +4,7 @@ import loading from '../../images/loading.gif'
 const BookDetails = () => {
     const [books, setBooks] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:4000/manageBook', {
+        fetch('https://radiant-reef-79950.herokuapp.com/manageBook', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -22,7 +22,7 @@ const BookDetails = () => {
         backgroundColor: 'white'
     }
     const handleDeleteBook=(id)=>{
-        fetch(`http://localhost:4000/delete/${id}`,{
+        fetch(`https://radiant-reef-79950.herokuapp.com/delete/${id}`,{
             method: 'DELETE'
         })
         .then(res => res.json())

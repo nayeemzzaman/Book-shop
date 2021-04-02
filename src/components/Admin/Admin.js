@@ -18,7 +18,7 @@ const Admin = () => {
             authorName: data.authorName,
             price: data.price
         };
-        const url = `http://localhost:4000/addBook`;
+        const url = `https://radiant-reef-79950.herokuapp.com/addBook`;
         console.log(formData);
         fetch(url, {
             method: 'POST',
@@ -37,14 +37,22 @@ const Admin = () => {
 
         axios.post('https://api.imgbb.com/1/upload', imageData)
             .then(function (response) {
+                console.log(response);
                 setImageUrl(response.data.data.display_url);
             })
             .catch(function (error) {
                 console.log(error);
             });
     }
+    const buttonStyle ={
+        border: 'none',
+        color: 'white',
+        height: '40px',
+        backgroundColor: 'rgba(0, 0, 150, 0.719)',
+        borderRadius: '5px'
+    }
     return (
-        <div className=' row'>
+        <div className='admin-page row'>
             <div className='side-component  col-md-4 col-lg-3'>
                 <div>
                     <h3>BOOK SHOP</h3>
@@ -67,7 +75,7 @@ const Admin = () => {
                                     <FontAwesomeIcon icon={faUpload}/> Upload Image</label>
                                 <input id="file-upload" type="file" name="image" onChange={handleImageUpload} />
                                 <br />
-                                <Button className="addButton">Add Book</Button>
+                                <input style={buttonStyle} type="submit" value="Add Book"></input>
                             </form>
                         </div>
                         :
@@ -77,7 +85,7 @@ const Admin = () => {
                 }
             </div>
         </div>
-
+        
     );
 };
 
