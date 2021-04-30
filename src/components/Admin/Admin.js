@@ -18,8 +18,8 @@ const Admin = () => {
             authorName: data.authorName,
             price: data.price
         };
+        console.log(formData.image);
         const url = `https://radiant-reef-79950.herokuapp.com/addBook`;
-        console.log(formData);
         fetch(url, {
             method: 'POST',
             headers: {
@@ -27,10 +27,11 @@ const Admin = () => {
             },
             body: JSON.stringify(formData)
         })
-            .then(res => console.log("server side response", res))
+        .then(res => {
+            alert("Book uploaded successfully");
+        })
     };
     const handleImageUpload = event => {
-        console.log(event.target.files[0]);
         const imageData = new FormData();
         imageData.set('key', 'af71afe8731531b9a92c36fd7b847ee3');
         imageData.append('image', event.target.files[0]);
@@ -38,6 +39,7 @@ const Admin = () => {
         axios.post('https://api.imgbb.com/1/upload', imageData)
             .then(function (response) {
                 console.log(response);
+                console.log(response.data.data.display_url);
                 setImageUrl(response.data.data.display_url);
             })
             .catch(function (error) {
